@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111827;
+  color: white;
+
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.hero p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card,
+.response-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+  margin-bottom: 22px;
+}
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2,
+.response-header h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.section-header p,
+.response-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+  width: 100%;
+
+  resize: vertical;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  padding: 15px;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  background: white;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+select:focus {
+  border-color: #6366f1;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+#submit-btn {
+  width: 100%;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 14px;
+
+  background: #111827;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
+}
+
+#submit-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+#submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader {
+  display: none;
+
+  width: 17px;
+  height: 17px;
+
+  margin-left: 8px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: spin 0.7s linear infinite;
+
+  vertical-align: middle;
+}
+
+.loading .loader {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  margin-top: 14px;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSE
+========================= */
+
+.response-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.secondary-btn {
+  border: 1px solid #d1d5db;
+
+  background: white;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.secondary-btn:hover {
+  background: #f3f4f6;
+}
+
+/* =========================
+   OUTPUT
+========================= */
+
+.output {
+  min-height: 180px;
+
+  padding: 22px;
+
+  background: #f8fafc;
+
+  border-radius: 12px;
+
+  border: 1px solid #e5e7eb;
+
+  line-height: 1.7;
+
+  font-size: 15px;
+
+  overflow-wrap: break-word;
+}
+
+.output h1,
+.output h2,
+.output h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.output h1:first-child,
+.output h2:first-child,
+.output h3:first-child {
+  margin-top: 0;
+}
+
+.output p {
+  margin: 10px 0;
+}
+
+.output ul,
+.output ol {
+  padding-left: 25px;
+  margin: 10px 0;
+}
+
+.output li {
+  margin-bottom: 6px;
+}
+
+.output code {
+  background: #e5e7eb;
+
+  padding: 2px 6px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+}
+
+.output pre {
+  background: #111827;
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  overflow-x: auto;
+
+  margin: 15px 0;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  min-height: 140px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #9ca3af;
+}
+
+.empty-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+
+  padding: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .app-container {
+    width: 94%;
+    padding: 25px 0;
+  }
+
+  .card,
+  .response-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .response-header {
+    align-items: flex-start;
+  }
+
+  .output {
+    padding: 16px;
+  }
+}

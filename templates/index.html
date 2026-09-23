@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>StudyAI — AI Study Assistant</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <main class="app-container">
+      <header class="hero">
+        <div class="logo">✦</div>
+
+        <div>
+          <h1>StudyAI</h1>
+          <p>Your AI-powered study assistant</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>What do you want to study?</h2>
+          <p>Enter your notes, topic, or study material below.</p>
+        </div>
+
+        <form id="study-form">
+          <div class="form-group">
+            <label for="prompt">Study Material</label>
+
+            <textarea
+              id="prompt"
+              name="prompt"
+              placeholder="Paste your notes or enter a topic here..."
+              rows="9"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="mode">Study Mode</label>
+
+            <select id="mode" name="mode">
+              <option value="summarize">Summarize Notes</option>
+              <option value="explain">Explain Topic</option>
+              <option value="quiz">Generate Quiz</option>
+              <option value="rewrite">Rewrite Notes</option>
+              <option value="plan">Create Study Plan</option>
+            </select>
+          </div>
+
+          <button type="submit" id="submit-btn">
+            <span id="button-text">Ask AI</span>
+            <span id="loader" class="loader"></span>
+          </button>
+        </form>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="response-card">
+        <div class="response-header">
+          <div>
+            <h2>AI Response</h2>
+            <p>Your generated study material will appear here.</p>
+          </div>
+
+          <button id="copy-btn" class="secondary-btn">Copy</button>
+        </div>
+
+        <div id="output" class="output">
+          <div class="empty-state">
+            <div class="empty-icon">✨</div>
+            <p>Your AI-generated response will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Built with Flask + OpenRouter</p>
+      </footer>
+    </main>
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
